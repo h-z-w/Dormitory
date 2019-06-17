@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Dormitory</string>
+    <string name="app_name">学生宿舍管理系统</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="学生信息">学生信息</string>
 </resources>

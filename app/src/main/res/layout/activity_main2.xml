@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity"
+    tools:context=".ui.Main2Activity"
     android:orientation="vertical">
 
     <!--存放framgment布局-->
     <LinearLayout
-        android:id="@+id/content_layout"
+        android:id="@+id/content_layout1"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="0dp"
@@ -23,40 +23,26 @@
         android:orientation="horizontal">
 
         <RadioGroup
-            android:id="@+id/btn_group"
+            android:id="@+id/btn_group1"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#F5FFFA">
             <RadioButton
                 android:checked="true"
-                android:id="@+id/btn_zhuye"
+                android:id="@+id/btn_zhuye1"
                 android:text="主页"
                 android:drawableTop="@drawable/tab_mune_zhuye"
                 style="@style/tab_menu_item" />
-
             <RadioButton
-                android:id="@+id/btn_information"
-                style="@style/tab_menu_item"
                 android:checked="false"
+                android:id="@+id/btn_information1"
+                android:text="个人信息"
                 android:drawableTop="@drawable/tab_mune_information"
-                android:text="学生信息" />
+                style="@style/tab_menu_item" />
 
-            <RadioButton
-                android:checked="false"
-                style="@style/tab_menu_item"
-                android:id="@+id/btn_xiugai"
-                android:text="修改密码"
-                android:drawableTop="@drawable/tab_mune_xiu"
 
-                />
-            <RadioButton
-                android:checked="false"
-                android:id="@+id/btn_ping"
-                android:text="卫生评比"
-                android:drawableTop="@drawable/tab_mune_ping"
-                style="@style/tab_menu_item"
-                />
+
         </RadioGroup>
 
 

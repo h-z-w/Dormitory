@@ -2,7 +2,7 @@ package com.example.dormitory.model;
 
 import java.io.Serializable;
 
-public class Xinxi implements Serializable {
+public class Student implements Serializable {
     private int id;
     private String name;
     private String className;
@@ -12,8 +12,10 @@ public class Xinxi implements Serializable {
     private String  tel;
     private String submissionDate;
 
+    public Student() {
+    }
 
-    public Xinxi(String name, String className, int xh, String sex, int shuShe, String tel, String submissionDate) {
+    public Student(String name, String className, int xh, String sex, int shuShe, String tel, String submissionDate) {
         this.name = name;
         this.className = className;
         this.xh = xh;

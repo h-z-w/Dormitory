@@ -16,7 +16,7 @@ import com.example.dormitory.R;
 //3、添加一个菜单  在menu中增加一个xml
 
 
-public class MainActivity extends AppCompatActivity
+public class Main2Activity extends AppCompatActivity
         implements RadioGroup.OnCheckedChangeListener,
         InformationFragment.OnFragmentInteractionListener {
 
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_main );
+        setContentView( R.layout.activity_main2 );
 
 
         initFragment();
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity
 
     //按钮组
     private void initView() {
-        group =findViewById( R.id.btn_group );
+        group =findViewById( R.id.btn_group1 );
         group.setOnCheckedChangeListener( this );
 
     }
@@ -58,13 +58,13 @@ public class MainActivity extends AppCompatActivity
         //将创建的放入集合中，将页面定位为第一个Fragment
         fragments =new SparseArray<>(  );
 
-        fragments.put( R.id.btn_zhuye,ZhuyeFragment.newInstance());
-        fragments.put( R.id.btn_information,Information1Fragment.newInstance("activity向Find_fragment传递的数据") );
+        fragments.put( R.id.btn_zhuye1,Zhuye1Fragment.newInstance());
+        fragments.put( R.id.btn_information1,InformationFragment.newInstance("activity向Find_fragment传递的数据") );
 
 
 
         //优先显示界面
-        replaceFragment(fragments.get( R.id.btn_zhuye ));
+        replaceFragment(fragments.get( R.id.btn_zhuye1 ));
     }
 
 
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity
         //2、
         FragmentTransaction ft = manager.beginTransaction();
         //3、
-        ft.replace( R.id.content_layout,fragment );
+        ft.replace( R.id.content_layout1,fragment );
         //4、
         ft.commit();
 

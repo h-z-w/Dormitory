@@ -23,23 +23,28 @@ public class XinxiDaoImpl implements XinxiDao{
     public List<Xinxi> selectAllXinxi() {
         List<Xinxi> xinxis =null;
         //1.获取
-        db = helper.getReadableDatabase();
-        //2.查询
-        String sql = "select * from xinxi";
-        Cursor cursor = db.rawQuery(sql,null);
-        //3.处理结果
-        if (cursor != null&& cursor.getCount() >0){
-            xinxis = new ArrayList<>();
-            while (cursor.moveToNext()){
-                Xinxi xinxi = new Xinxi();
-                xinxi.setName(cursor.getString(cursor.getColumnIndex("name")));
-                xinxi.setClassName(cursor.getString(cursor.getColumnIndex("classname")));
-                xinxi.setXh(cursor.getInt(cursor.getColumnIndex("sex")));
-                xinxi.setClassName(cursor.getString(cursor.getColumnIndex("classname")));
-                xinxis.add(xinxi);
-            }
-            cursor.close();
-        }
+//        db = helper.getReadableDatabase();
+//        //2.查询
+//        String sql = "select * from xinxi";
+//        Cursor cursor = db.rawQuery(sql,null);
+//        //3.处理结果
+//        if (cursor != null&& cursor.getCount() >0){
+//            xinxis = new ArrayList<>();
+//            while (cursor.moveToNext()){
+//                Xinxi xinxi = new Xinxi();
+//                xinxi.setId(cursor.getInt(cursor.getColumnIndex("id")));
+//                xinxi.setName(cursor.getString(cursor.getColumnIndex("name")));
+//                xinxi.setClassName(cursor.getString(cursor.getColumnIndex("classname")));
+//                xinxi.setXh(cursor.getInt(cursor.getColumnIndex("xh")));
+//                xinxi.setSex(cursor.getString(cursor.getColumnIndex("sex")));
+//                xinxi.setShuShe(cursor.getInt(cursor.getColumnIndex("shuse")));
+//                xinxi.setTel(cursor.getString(cursor.getColumnIndex("tel")));
+//                xinxi.setSubmissionDate(cursor.getString(cursor.getColumnIndex("submissionDate")));
+//                xinxis.add(xinxi);
+//            }
+//            cursor.close();
+//        }
+//        db.close();
         //4.返回
         return xinxis;
     }
@@ -52,12 +57,13 @@ public class XinxiDaoImpl implements XinxiDao{
         db.execSQL(sql,new Object[]{xinxi.getName(),
                 xinxi.getClassName(),
         xinxi.getXh(),xinxi.getSex(),xinxi.getShuShe(),xinxi.getTel(),xinxi.getSubmissionDate()});
+        db.close();
     }
 
     @Override
     public void update(Xinxi xinxi) {
         db = helper.getWritableDatabase();
-        String sql = "update  xinxi set name=?";
+        String sql = "update  xinxi set shuse=? where name=?";
         db.execSQL(sql,new Object[]{xinxi.getName(),
                 xinxi.getClassName(),
                 xinxi.getXh(),xinxi.getSex(),xinxi.getShuShe(),xinxi.getTel(),xinxi.getSubmissionDate()});
@@ -67,7 +73,7 @@ public class XinxiDaoImpl implements XinxiDao{
     public void delete(String name) {
         db = helper.getWritableDatabase();
         String sql = "delete from xinxi where name=?";
-        db.execSQL(sql,new Object[]{selectAllXinxi().getClass()});
+        db.execSQL(sql,new Object[]{name});
 
     }
 }
