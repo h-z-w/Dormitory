@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity
 
         fragments.put( R.id.btn_zhuye,ZhuyeFragment.newInstance());
         fragments.put( R.id.btn_information,Information1Fragment.newInstance("activity向Find_fragment传递的数据") );
-
+        fragments.put(R.id.btn_ping,MarkFragment.newInstance("activity向Find_fragment传递的数据"));
 
 
         //优先显示界面

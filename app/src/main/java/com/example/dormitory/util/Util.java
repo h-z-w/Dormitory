@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabaseLockedException;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.dormitory.model.Sorce;
 import com.example.dormitory.model.Student;
 import com.example.dormitory.ui.LoginActivity;
 import com.example.dormitory.ui.LookActivity;
@@ -38,6 +39,7 @@ public class Util extends SQLiteOpenHelper {
         db.execSQL(Student.TBL_STUDENT);
         db.execSQL(TBL_Login);
         db.execSQL(TBL_ROOM);
+        db.execSQL(Sorce.TBL_SORCE);
         db.execSQL("insert into denglu values(null, '1111', '1111')");
 
     }
@@ -47,6 +49,7 @@ public class Util extends SQLiteOpenHelper {
         db.execSQL("drop table if exists student" );
         db.execSQL("drop table if exists denglu");
         db.execSQL("drop table if exists room");
+        db.execSQL("drop table if exists sorce");
         onCreate(db);
     }
 }
