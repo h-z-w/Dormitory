@@ -62,7 +62,7 @@ public class Information1Fragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_information1, container, false);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle( "学生信息");
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle( "宿舍信息");
 
         if (view == null){
             view = inflater.inflate(R.layout.fragment_information1,container,false);
@@ -86,9 +86,9 @@ public class Information1Fragment extends Fragment  {
                     intent.putExtra("title","查看学生信息");
                     startActivity(intent);
                 }
-                if("添加学生信息".equals(data)){
-                    Intent intent=new Intent(getActivity(),StudentAddActivity.class);
-                    intent.putExtra("title","添加学生信息");
+                if("查看宿舍信息".equals(data)){
+                    Intent intent=new Intent(getActivity(),Look3Activity.class);
+                    intent.putExtra("title","查看宿舍信息");
                     startActivity(intent);
                 }
             }
@@ -111,7 +111,7 @@ public class Information1Fragment extends Fragment  {
     private void initData() {
         datas = new ArrayList<>();
         datas.add("查看学生信息");
-        datas.add("添加学生信息");
+        datas.add("查看宿舍信息");
 
 
     }

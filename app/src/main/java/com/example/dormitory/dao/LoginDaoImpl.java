@@ -18,7 +18,7 @@ public abstract class LoginDaoImpl implements LoginDao {
         //调用MyDBHelper类的构造方法时，
         //若发现demo.db不存在会调用创建
         //若发现demo.db存在,且的版本与已有的一致，则调用onUpgrade方法更新
-        helper = new Util(context, 1);
+        helper = Util.getInstance(context);
     }
 
     public LoginDaoImpl() {

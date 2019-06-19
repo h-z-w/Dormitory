@@ -16,7 +16,7 @@ public class XinxiDaoImpl implements XinxiDao{
     public XinxiDaoImpl(Context context){
         //调用Util类的构造方法时，如发现demo.db不存在会调用omCreate创建
         //若发现demo.db存在，且version的版本与已有的不一致，则调用onUpgrade方法更新
-        helper = new Util(context,1);
+        helper = Util.getInstance(context);
 
     }
     @Override

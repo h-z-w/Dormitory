@@ -18,4 +18,6 @@ public interface RoomDao {
     void insert(Room room);
     void update(Room room);
     void delete(String roomName);
+
+    void delete(int roomName);
 }

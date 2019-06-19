@@ -40,16 +40,9 @@
                 style="@style/tab_menu_item"
                 android:checked="false"
                 android:drawableTop="@drawable/tab_mune_information"
-                android:text="学生信息" />
+                android:text="宿舍信息" />
 
-            <RadioButton
-                android:checked="false"
-                style="@style/tab_menu_item"
-                android:id="@+id/btn_xiugai"
-                android:text="修改密码"
-                android:drawableTop="@drawable/tab_mune_xiu"
 
-                />
             <RadioButton
                 android:checked="false"
                 android:id="@+id/btn_ping"

@@ -49,7 +49,7 @@ public class xinxiAdapter extends BaseAdapter {
             holder.tvName=convertView.findViewById(R.id.name);
             holder.tvClass=convertView.findViewById(R.id.classroom);
             holder.tvSex=convertView.findViewById(R.id.sex);
-            holder.tvSuShe=convertView.findViewById(R.id.shuse);
+            holder.tvSuShe=convertView.findViewById(R.id.sushe);
             holder.tvTel=convertView.findViewById(R.id.tel);
             holder.tvDate=convertView.findViewById(R.id.time);
             convertView.setTag(holder);

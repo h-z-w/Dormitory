@@ -3,6 +3,15 @@ package com.example.dormitory.model;
 import java.io.Serializable;
 
 public class Student implements Serializable {
+    public static  final String TBL_STUDENT ="CREATE TABLE  student(" +
+            "  id integer PRIMARY KEY autoincrement ," +
+            "  name VARCHAR(100) NOT NULL ," +
+            "  classroom VARCHAR(40) NOT NULL ," +
+            "  xh integer(10) NOT NULL ," +
+            "  sex VARCHAR(40) NOT NULL ," +
+            "  sushe integer(8) NOT NULL ," +
+            "  tel varchar(11) NOT NULL ," +
+            "  submission_date DATE )";
     private int id;
     private String name;
     private String className;

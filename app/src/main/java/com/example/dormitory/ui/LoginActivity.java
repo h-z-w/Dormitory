@@ -101,6 +101,7 @@ public class LoginActivity extends Activity {
 
 
                 } else {
+
                     Toast.makeText(LoginActivity.this, "帐户，密码不能为空", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -139,8 +140,7 @@ public class LoginActivity extends Activity {
                             String firstPasswordInfo = firstPassword.getText().toString();
                             String secondPasswordInfo = secondPassword.getText().toString();
                             SQLiteDatabase db = dbHelper.getWritableDatabase();
-                            //检测密码是否为6个数字
-                            if (firstPasswordInfo.matches("[0-9]{6}")) {
+
                                 // 两次密码是否相同
                                 if (firstPasswordInfo.equals(secondPasswordInfo)) {
                                     Cursor cursor = db.rawQuery("select username from denglu where username=? ", new String[]{nameInfo});
@@ -153,12 +153,9 @@ public class LoginActivity extends Activity {
                                 } else {
                                     Toast.makeText(LoginActivity.this, "两次密码不相同", Toast.LENGTH_SHORT).show();
                                 }
-                            } else {
-                                Toast.makeText(LoginActivity.this, "密码为6位纯数字", Toast.LENGTH_SHORT).show();
                             }
 
-
-                        } else {
+                         else {
                             Toast.makeText(LoginActivity.this, "注册码错误", Toast.LENGTH_SHORT).show();
                         }
                     }

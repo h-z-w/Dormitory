@@ -17,7 +17,7 @@ public class StudentDaoImpl implements StudentDao{
     public StudentDaoImpl(Context context){
         //调用Util类的构造方法时，如发现demo.db不存在会调用omCreate创建
         //若发现demo.db存在，且version的版本与已有的不一致，则调用onUpgrade方法更新
-        helper = new Util(context,1);
+        helper = Util.getInstance(context);
 
     }
     @Override
@@ -55,9 +55,14 @@ public class StudentDaoImpl implements StudentDao{
         //1.获取db对象
         db = helper.getWritableDatabase();
         String sql = "insert into student values(null,?,?,?,?,?,?,?)";
-        db.execSQL(sql,new Object[]{student.getName(),
+        db.execSQL(sql,new Object[]{
+                student.getName(),
                 student.getClassName(),
-        student.getXh(),student.getSex(),student.getShuShe(),student.getTel(),student.getSubmissionDate()});
+                student.getXh(),
+                student.getSex(),
+                student.getShuShe(),
+                student.getTel(),
+                student.getSubmissionDate()});
         db.close();
     }
 
@@ -69,10 +74,10 @@ public class StudentDaoImpl implements StudentDao{
     @Override
     public void update(Student student) {
         db = helper.getWritableDatabase();
-        String sql = "update  student set shuse=? where name=?";
-        db.execSQL(sql,new Object[]{student.getName(),
-                student.getClassName(),
-                student.getXh(),student.getSex(),student.getShuShe(),student.getTel(),student.getSubmissionDate()});
+        String sql = "update  student set sushe=? where name=?";
+        db.execSQL(sql,new Object[]{
+                student.getShuShe(),
+                student.getName()});
     }
 
     @Override

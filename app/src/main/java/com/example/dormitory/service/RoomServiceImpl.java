@@ -19,6 +19,12 @@ public class RoomServiceImpl implements RoomService{
         return roomDao.selectAllRooms();
     }
 
+    @Override
+    public Room select(int roomName) {
+        {
+            return roomDao.select(String.valueOf(roomName));
+        }
+    }
     public void insert(Room room) {
         roomDao.insert(room);
     }
@@ -29,7 +35,7 @@ public class RoomServiceImpl implements RoomService{
     }
 
     @Override
-    public void delete(String roomName) {
+    public void delete(int roomName) {
         roomDao.delete(roomName);
     }
 }

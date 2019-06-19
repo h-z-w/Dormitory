@@ -18,20 +18,16 @@ public class RoomDaoImpl implements RoomDao {
         // 调用MyDBHelper类的构造方法时，
         // 若发现demo.db不存在会调用onCreate方法创建
         // 若发现demo.db存在，且version的版本与已有的不一致，则调用onUpgrade方法更新
-        dbHelper = new Util(context, 1);
+        dbHelper = Util.getInstance(context);
     }
 
     public void insert(Room room) {
         db = dbHelper.getWritableDatabase();
-        String sql = "insert into t_room values(null,?,?,?,?,?,?,?)";
+        String sql = "insert into room values(null,?,?,?)";
         db.execSQL(sql, new Object[]{
-                room.getName(),
-                room.getClassroom(),
-                room.getXh(),
-                room.getSex(),
-                room.getTel(),
-                room.getShushe(),
-                room.getData()});
+                room.getSushe(),
+                room.getSzpeople(),
+                room.getYzpeople()});
         db.close();
     }
 
@@ -40,10 +36,10 @@ public class RoomDaoImpl implements RoomDao {
         // 1. 获取db对象
         db = dbHelper.getWritableDatabase();
         // 2. 执行sql
-        String sql = "update student set xh=? where name=?";
+        String sql = "update room set szpeople=? where sushe=?";
         db.execSQL(sql, new Object[]{
-                room.getXh(),
-                room.getName()
+                room.getSzpeople(),
+                room.getSushe()
         });
     }
 
@@ -52,12 +48,17 @@ public class RoomDaoImpl implements RoomDao {
         // 1. 获取db对象
         db = dbHelper.getWritableDatabase();
         // 2. 执行sql
-        String sql = "delete from student where name=?";
+        String sql = "delete from room where shushe=?";
         db.execSQL(sql, new Object[]{ roomName });
     }
 
+    @Override
+    public void delete(int roomName) {
+
+    }
+
     public List<Room> selectAllRooms() {
-        String sql = "select * from student";
+        String sql = "select * from room";
         List<Room> rooms = null;
 
         // 1. 获取SQLiteDatabase对象
@@ -73,13 +74,9 @@ public class RoomDaoImpl implements RoomDao {
             while (cursor.moveToNext()) {
                 Room room = new Room();
                 room.setId(cursor.getInt(cursor.getColumnIndex("id")));
-                room.setName(cursor.getString(cursor.getColumnIndex("name")));
-                room.setClassroom(cursor.getString(cursor.getColumnIndex("classroom_sex")));
-                room.setXh(cursor.getInt(cursor.getColumnIndex("xh")));
-                room.setSex(cursor.getString(cursor.getColumnIndex("sex")));
-                room.setTel(cursor.getString(cursor.getColumnIndex("tel")));
-                room.setShushe(cursor.getString(cursor.getColumnIndex("shushe")));
-                room.setData(cursor.getString(cursor.getColumnIndex("data")));
+                room.setSushe(cursor.getInt(cursor.getColumnIndex("sushe")));
+                room.setSzpeople(cursor.getInt(cursor.getColumnIndex("szpeople")));
+                room.setYzpeople(cursor.getInt(cursor.getColumnIndex("yzpeople")));
                 rooms.add(room);
             }
             // 4. 关闭cursor
@@ -92,7 +89,7 @@ public class RoomDaoImpl implements RoomDao {
 
     @Override
     public Room select(String roomName) {
-        String sql = "select * from t_room where room_name=?";
+        String sql = "select * from room where shushe=?";
         Room room = null;
 
         // 1. 获取SQLiteDatabase对象
@@ -106,13 +103,9 @@ public class RoomDaoImpl implements RoomDao {
             if (cursor.moveToNext()) {
                 room = new Room();
                 room.setId(cursor.getInt(cursor.getColumnIndex("id")));
-                room.setName(cursor.getString(cursor.getColumnIndex("name")));
-                room.setClassroom(cursor.getString(cursor.getColumnIndex("classroom_sex")));
-                room.setXh(cursor.getInt(cursor.getColumnIndex("xh")));
-                room.setSex(cursor.getString(cursor.getColumnIndex("sex")));
-                room.setTel(cursor.getString(cursor.getColumnIndex("tel")));
-                room.setShushe(cursor.getString(cursor.getColumnIndex("shushe")));
-                room.setData(cursor.getString(cursor.getColumnIndex("data")));
+                room.setSushe(cursor.getInt(cursor.getColumnIndex("sushe")));
+                room.setSzpeople(cursor.getInt(cursor.getColumnIndex("szpeople")));
+                room.setYzpeople(cursor.getInt(cursor.getColumnIndex("yzpeople")));
                  }
             // 4. 关闭cursor
             cursor.close();
@@ -124,7 +117,7 @@ public class RoomDaoImpl implements RoomDao {
 
     @Override
     public List<Room> selectByNumber() {
-        String sql = "select * from student where expect_number > real_number";
+        String sql = "select * from room where yzpeople > szpeople";
         List<Room> rooms = null;
 
         // 1. 获取SQLiteDatabase对象
@@ -140,14 +133,10 @@ public class RoomDaoImpl implements RoomDao {
             while (cursor.moveToNext()) {
                 Room room = new Room();
                 room.setId(cursor.getInt(cursor.getColumnIndex("id")));
-                room.setName(cursor.getString(cursor.getColumnIndex("name")));
-                room.setClassroom(cursor.getString(cursor.getColumnIndex("classroom_sex")));
-                room.setXh(cursor.getInt(cursor.getColumnIndex("xh")));
-                room.setSex(cursor.getString(cursor.getColumnIndex("sex")));
-                room.setTel(cursor.getString(cursor.getColumnIndex("tel")));
-                room.setShushe(cursor.getString(cursor.getColumnIndex("shushe")));
-                room.setData(cursor.getString(cursor.getColumnIndex("data")));
-                rooms.add(room);;
+                room.setSushe(cursor.getInt(cursor.getColumnIndex("sushe")));
+                room.setYzpeople(cursor.getInt(cursor.getColumnIndex("yzpeople")));
+                room.setSzpeople(cursor.getInt(cursor.getColumnIndex("szpeople")));
+                rooms.add(room);
             }
             // 4. 关闭cursor
             cursor.close();

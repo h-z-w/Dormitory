@@ -2,121 +2,108 @@ package com.example.dormitory.model;
 
 import java.io.Serializable;
 
-public class Room implements Serializable {
-    public static final String TBL_ROOM = "CREATE TABLE  student(" +
+public class Room extends Student implements Serializable {
+    public static final String TBL_ROOM = "CREATE TABLE  room(" +
             "  id integer PRIMARY KEY autoincrement ," +
-            "  name VARCHAR(100) NOT NULL ," +
-            "  classroom VARCHAR(40) NOT NULL ," +
-            "  xh integer(10) NOT NULL ," +
-            "  sex VARCHAR(40) NOT NULL ," +
-            "  sushe integer(8) NOT NULL ," +
-            "  tel varchar(11) NOT NULL ," +
-            "  submission_date DATE )";
-
+            "  sushe integer NOT NULL ," +
+            "  yzpeople  integer NOT NULL ," +
+            "  szpeople integer NOT NULL" +
+            "cost integer, "  +
+            "remark varchar(200)))";
 
     private int id;
-    private String name;
-    private String classroom;
-    private int xh;
-    private String  sex;
-    private String tel;
-    private String data;
-    private String shushe;
+    private int sushe;
+    private int yzpeople;
+    private int szpeople;
+    private int cost;
+    private String remark;
 
-    public Room(int id, String name, String classroom, int xh, String sex, String tel, String shushe,String data) {
-        this.id = id;
-        this.name = name;
-        this.classroom = classroom;
-        this.xh = xh;
-        this.sex = sex;
-        this.tel = tel;
-        this.shushe = shushe;
-        this.data = data;
-    }
 
+
+
+    String selectSQL = "select * from room where yzpeople > szpeople";  // 查询所有没住满的宿舍信息列表
     public Room() {
 
     }
 
-    public static String getTblRoom() {
-        return TBL_ROOM;
+    public Room(int id, int sushe, int yzpeople, int szpeople, int cost, String remark, String selectSQL) {
+        this.id = id;
+        this.sushe = sushe;
+        this.yzpeople = yzpeople;
+        this.szpeople = szpeople;
+        this.cost = cost;
+        this.remark = remark;
+        this.selectSQL = selectSQL;
     }
 
+    @Override
     public int getId() {
         return id;
     }
 
+    @Override
     public void setId(int id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public int getSushe() {
+        return sushe;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSushe(int sushe) {
+        this.sushe = sushe;
     }
 
-    public String getClassroom() {
-        return classroom;
+    public int getYzpeople() {
+        return yzpeople;
     }
 
-    public void setClassroom(String classroom) {
-        this.classroom = classroom;
+    public void setYzpeople(int yzpeople) {
+        this.yzpeople = yzpeople;
     }
 
-    public int getXh() {
-        return xh;
+    public int getSzpeople() {
+        return szpeople;
     }
 
-    public void setXh(int xh) {
-        this.xh = xh;
+    public void setSzpeople(int szpeople) {
+        this.szpeople = szpeople;
     }
 
-    public String getSex() {
-        return sex;
+    public int getCost() {
+        return cost;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setCost(int cost) {
+        this.cost = cost;
     }
 
-    public String getTel() {
-        return tel;
+    public String getRemark() {
+        return remark;
     }
 
-    public void setTel(String tel) {
-        this.tel = tel;
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 
-    public String getShushe() {
-        return shushe;
+    public String getSelectSQL() {
+        return selectSQL;
     }
 
-    public void setShushe(String shushe) {
-        this.shushe = shushe;
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
-        this.data = data;
+    public void setSelectSQL(String selectSQL) {
+        this.selectSQL = selectSQL;
     }
 
     @Override
     public String toString() {
         return "Room{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", classroom='" + classroom + '\'' +
-                ", xh=" + xh +
-                ", sex='" + sex + '\'' +
-                ", tel='" + tel + '\'' +
-                ", shushe='" + shushe + '\'' +
-                ", data='" + data + '\'' +
+                ", sushe=" + sushe +
+                ", yzpeople=" + yzpeople +
+                ", szpeople=" + szpeople +
+                ", cost=" + cost +
+                ", remark='" + remark + '\'' +
+                ", selectSQL='" + selectSQL + '\'' +
                 '}';
     }
 }

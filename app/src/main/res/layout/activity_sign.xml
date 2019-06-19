@@ -37,7 +37,8 @@
         android:background="@drawable/input_box"
         android:gravity="center"
         android:hint="请输入密码"
-        android:inputType="numberPassword" />
+        android:inputType="textPassword"
+ />
 
     <EditText
         android:id="@+id/admin_register_second_password"
@@ -50,7 +51,7 @@
         android:background="@drawable/input_box"
         android:gravity="center"
         android:hint="请确认密码"
-        android:inputType="numberPassword" />
+        android:inputType="textPassword" />
 
 
 </LinearLayout>
