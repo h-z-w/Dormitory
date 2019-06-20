@@ -28,7 +28,7 @@
                 android:textSize="30dp" />
 
             <Spinner
-                android:id="@+id/sushe1"
+                android:id="@+id/sushe"
                 android:layout_width="225dp"
                 android:layout_height="36dp"
                 android:ems="16"

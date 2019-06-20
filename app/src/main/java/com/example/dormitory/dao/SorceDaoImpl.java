@@ -39,7 +39,7 @@ public class SorceDaoImpl implements SorceDao{
                 sorce.setId(cursor.getInt(cursor.getColumnIndex("id")));
                 sorce.setSushe(cursor.getInt(cursor.getColumnIndex("sushe")));
                 sorce.setMarks(cursor.getInt(cursor.getColumnIndex("marks")));
-                sorce.setData(cursor.getString(cursor.getColumnIndex("data")));
+                sorce.setData(cursor.getString(cursor.getColumnIndex("submission_date")));
                 sorces.add(sorce);
             }
             cursor.close();

@@ -23,11 +23,13 @@ public class RoomDaoImpl implements RoomDao {
 
     public void insert(Room room) {
         db = dbHelper.getWritableDatabase();
-        String sql = "insert into room values(null,?,?,?)";
+        String sql = "insert into room values(null,?,?,?,?,?)";
         db.execSQL(sql, new Object[]{
                 room.getSushe(),
                 room.getSzpeople(),
-                room.getYzpeople()});
+                room.getYzpeople(),
+                room.getCost(),
+                room.getRemark()});
         db.close();
     }
 
@@ -77,6 +79,8 @@ public class RoomDaoImpl implements RoomDao {
                 room.setSushe(cursor.getInt(cursor.getColumnIndex("sushe")));
                 room.setSzpeople(cursor.getInt(cursor.getColumnIndex("szpeople")));
                 room.setYzpeople(cursor.getInt(cursor.getColumnIndex("yzpeople")));
+                room.setCost(cursor.getInt(cursor.getColumnIndex("cost")));
+                room.setRemark(cursor.getString(cursor.getColumnIndex("remark")));
                 rooms.add(room);
             }
             // 4. 关闭cursor
@@ -106,6 +110,8 @@ public class RoomDaoImpl implements RoomDao {
                 room.setSushe(cursor.getInt(cursor.getColumnIndex("sushe")));
                 room.setSzpeople(cursor.getInt(cursor.getColumnIndex("szpeople")));
                 room.setYzpeople(cursor.getInt(cursor.getColumnIndex("yzpeople")));
+                room.setCost(cursor.getInt(cursor.getColumnIndex("cost")));
+                room.setRemark(cursor.getString(cursor.getColumnIndex("remark")));
                  }
             // 4. 关闭cursor
             cursor.close();
@@ -136,6 +142,8 @@ public class RoomDaoImpl implements RoomDao {
                 room.setSushe(cursor.getInt(cursor.getColumnIndex("sushe")));
                 room.setYzpeople(cursor.getInt(cursor.getColumnIndex("yzpeople")));
                 room.setSzpeople(cursor.getInt(cursor.getColumnIndex("szpeople")));
+                room.setCost(cursor.getInt(cursor.getColumnIndex("cost")));
+                room.setRemark(cursor.getString(cursor.getColumnIndex("remark")));
                 rooms.add(room);
             }
             // 4. 关闭cursor

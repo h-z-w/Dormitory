@@ -34,4 +34,9 @@ public class StudentServiceImpl implements StudentService{
     public void modify(Student student) {
         studentDao.update(student);
     }
+
+    @Override
+    public void modify(int parseInt) {
+
+    }
 }

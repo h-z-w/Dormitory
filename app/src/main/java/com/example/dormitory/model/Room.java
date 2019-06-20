@@ -7,9 +7,9 @@ public class Room extends Student implements Serializable {
             "  id integer PRIMARY KEY autoincrement ," +
             "  sushe integer NOT NULL ," +
             "  yzpeople  integer NOT NULL ," +
-            "  szpeople integer NOT NULL" +
+            "  szpeople integer NOT NULL," +
             "cost integer, "  +
-            "remark varchar(200)))";
+            "remark varchar(200))";
 
     private int id;
     private int sushe;

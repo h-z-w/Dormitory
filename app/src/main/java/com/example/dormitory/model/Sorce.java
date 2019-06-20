@@ -6,8 +6,8 @@ public class Sorce implements Serializable {
     public static  final String TBL_SORCE ="CREATE TABLE  sorce(" +
             "  id integer PRIMARY KEY autoincrement ," +
             "  sushe integer NOT NULL ," +
-            "  marks  integer NOT NULL " +
-            "  submission_date DATE";
+            "  marks  integer NOT NULL," +
+            "  submission_date DATE)";
     private int id;
     private int sushe;
     private int marks;

@@ -16,4 +16,7 @@ public interface StudentService {
     void insert(Student student);
     void delete(int shushe);
      void modify(Student student);
+
+
+    void modify(int parseInt);
 }

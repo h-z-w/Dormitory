@@ -57,8 +57,8 @@ public class SorceAdapter extends BaseAdapter {
         }
 
         Sorce sorce = sorces.get(position);
-        holder.sushe.setText(sorce.getSushe());
-        holder.marks.setText(sorce.getMarks());
+        holder.sushe.setText(String.valueOf(sorce.getSushe()));
+        holder.marks.setText(String.valueOf(sorce.getMarks()));
         holder.data.setText(String.valueOf(sorce.getData()));
         return convertView;
     }

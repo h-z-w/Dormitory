@@ -28,7 +28,7 @@ public class Util extends SQLiteOpenHelper {
 
     public static Util getInstance(Context context) {
         if (instance == null) {
-            instance = new Util(context, 3);
+            instance = new Util(context, 7);
         }
         return instance;
     }
