@@ -35,12 +35,12 @@ public class StudentDaoImpl implements StudentDao{
                 Student student = new Student();
                 student.setId(cursor.getInt(cursor.getColumnIndex("id")));
                 student.setName(cursor.getString(cursor.getColumnIndex("name")));
-                student.setClassName(cursor.getString(cursor.getColumnIndex("classname")));
+                student.setClassName(cursor.getString(cursor.getColumnIndex("classroom")));
                 student.setXh(cursor.getInt(cursor.getColumnIndex("xh")));
                 student.setSex(cursor.getString(cursor.getColumnIndex("sex")));
-                student.setShuShe(cursor.getInt(cursor.getColumnIndex("shuse")));
+                student.setShuShe(cursor.getInt(cursor.getColumnIndex("sushe")));
                 student.setTel(cursor.getString(cursor.getColumnIndex("tel")));
-                student.setSubmissionDate(cursor.getString(cursor.getColumnIndex("submissionDate")));
+                student.setSubmissionDate(cursor.getString(cursor.getColumnIndex("submission_date")));
                 students.add(student);
             }
             cursor.close();
@@ -81,10 +81,10 @@ public class StudentDaoImpl implements StudentDao{
     }
 
     @Override
-    public void delete(String name) {
+    public void delete(int xh) {
         db = helper.getWritableDatabase();
-        String sql = "delete from student where name=?";
-        db.execSQL(sql,new Object[]{name});
+        String sql = "delete from student where xh=?";
+        db.execSQL(sql,new Object[]{xh});
 
     }
 }

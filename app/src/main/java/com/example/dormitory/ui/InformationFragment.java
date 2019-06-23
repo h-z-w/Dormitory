@@ -79,7 +79,7 @@ public class InformationFragment extends Fragment  {
                 String data = (String) parent.getItemAtPosition(position);
                 Toast.makeText(parent.getContext(),data,Toast.LENGTH_LONG).show();
                 if("查看个人信息".equals(data)){
-                    Intent intent=new Intent(getActivity(),LookActivity.class);
+                    Intent intent=new Intent(getActivity(),Look2Activity.class);
                     intent.putExtra("title","查看个人信息");
                     startActivity(intent);
                 }

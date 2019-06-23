@@ -25,11 +25,11 @@ import java.util.List;
 public class StudentAddActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnSave, btnCancel;
     private EditText etName, etClassroom;
-    private EditText etxh;
+    private EditText etxh,etsex;
     private EditText ettel,ettime;
-    private Spinner spshushe, spRoomSex;
+    private Spinner spshushe;
 
-    private List<String> sexes;
+
     private Student student;
     private List<Room> rooms;
     private String flag;
@@ -71,7 +71,7 @@ public class StudentAddActivity extends AppCompatActivity implements View.OnClic
 
     private void initView() {
         etName = findViewById(R.id.name);
-        spRoomSex = findViewById(R.id.sex);
+        etsex = findViewById(R.id.sex);
         etClassroom = findViewById(R.id.classroom);
         spshushe = findViewById(R.id.sushe);
         ettel = findViewById(R.id.tel);
@@ -83,11 +83,7 @@ public class StudentAddActivity extends AppCompatActivity implements View.OnClic
         btnSave.setOnClickListener(this);
         btnCancel.setOnClickListener(this);
 
-        sexes = Arrays.asList(getResources().getStringArray(R.array.sex));
-        spRoomSex.setAdapter(new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_spinner_dropdown_item,
-                sexes));
+
 
         spshushe.setAdapter(new ArrayAdapter<>(
                 this,
@@ -105,15 +101,20 @@ public class StudentAddActivity extends AppCompatActivity implements View.OnClic
             if(student != null) {
                 etName.setText(student.getName());
                 etName.setEnabled(false);
+                etxh.setText(String.valueOf(student.getXh()));
+                etxh.setEnabled(false);
                 etClassroom.setText(String.valueOf(student.getClassName()));
+                etClassroom.setEnabled(false);
+                etsex.setText(String.valueOf(student.getSex()));
+                etsex.setEnabled(false);
                 ettel.setText(String.valueOf(student.getTel()));
                 ettime.setText(String.valueOf(student.getSubmissionDate()));
-                etxh.setText(String.valueOf(student.getXh()));
+
 
                 int roomNumber = Integer.valueOf(etxh.getText().toString());
                 int index = getSelectedIndex(roomNumber);
                 spshushe.setSelection(index == -1 ? 0 : index, true);
-                spRoomSex.setSelection(sexes.indexOf(student.getSex()), true);
+
             }
         }
     }
@@ -135,7 +136,7 @@ public class StudentAddActivity extends AppCompatActivity implements View.OnClic
         student.setName(etName.getText().toString());
         student.setXh(Integer.valueOf(etxh.getText().toString()));
         student.setClassName(etClassroom.getText().toString());
-        student.setSex((String) spRoomSex.getSelectedItem());
+        student.setSex(etsex.getText().toString());
         student.setTel(ettel.getText().toString());
         student.setSubmissionDate(ettime.getText().toString());
         student.setShuShe(Integer.valueOf(spshushe.getSelectedItem().toString()));

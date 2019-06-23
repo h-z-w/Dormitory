@@ -30,7 +30,7 @@ public class SorceServiceImpl implements SorceService{
 
     @Override
     public void delete(int shushe) {
-        sorceDao.delete(String.valueOf(shushe));
+        sorceDao.delete(Integer.parseInt(String.valueOf(shushe)));
     }
 
     public void modify(Sorce sorce) {

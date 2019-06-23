@@ -56,8 +56,8 @@ public class RoomAdapter extends BaseAdapter {
 
         Room room = rooms.get(position);
         holder.tvName.setText(String.valueOf(room.getSushe()));
-        holder.tvExpectNumber.setText(String.valueOf(room.getSzpeople()));
-        holder.tvRealNumber.setText(String.valueOf(room.getYzpeople()));
+        holder.tvExpectNumber.setText(String.valueOf(room.getYzpeople()));
+        holder.tvRealNumber.setText(String.valueOf(room.getSzpeople()));
         holder.tvCost.setText(String.valueOf(room.getCost()));
 
         return convertView;

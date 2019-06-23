@@ -14,7 +14,7 @@ import java.util.List;
 public interface StudentService {
      List<Student> getAllStudents();
     void insert(Student student);
-    void delete(int shushe);
+    void delete(int xh);
      void modify(Student student);
 
 

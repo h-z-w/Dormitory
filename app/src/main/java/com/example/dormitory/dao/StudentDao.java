@@ -18,5 +18,5 @@ public interface StudentDao {
     void insert(Login login);
 
     void update(Student student);
-    void delete(String xh);
+    void delete(int xh);
 }

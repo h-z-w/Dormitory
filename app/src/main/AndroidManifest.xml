@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.SorceActivity"></activity>
+        <activity android:name=".ui.SearchActivity"></activity>
+        <activity android:name=".ui.SorceActivity" />
         <activity android:name=".ui.Look4Activity" />
         <activity android:name=".ui.Look3Activity" />
         <activity android:name=".ui.RoomActivity" />
         <activity android:name=".ui.Modify2Activity" />
         <activity android:name=".ui.ModifyActivity" />
         <activity android:name=".ui.Look2Activity" />
-        <activity android:name=".ui.GaiActivity" />
         <activity android:name=".ui.LookActivity" />
         <activity android:name=".ui.Main2Activity" />
         <activity android:name=".ui.MainActivity" />

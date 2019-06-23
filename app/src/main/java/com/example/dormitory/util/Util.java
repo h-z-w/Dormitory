@@ -22,13 +22,13 @@ public class Util extends SQLiteOpenHelper {
     "password VARCHAR(40) NOT NULL )";
 
 
-    private Util( Context context,int version) {
+    public Util(Context context, int version) {
         super(context, "demo.db", null, version);
     }
 
     public static Util getInstance(Context context) {
         if (instance == null) {
-            instance = new Util(context, 7);
+            instance = new Util(context, 3);
         }
         return instance;
     }

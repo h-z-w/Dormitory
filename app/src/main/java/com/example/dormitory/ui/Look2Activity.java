@@ -82,7 +82,7 @@ public class Look2Activity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 // 从SQLite数据库的表中删除
-                                studentService.delete(Integer.parseInt(String.valueOf(selectedStudent.getShuShe())));
+                                studentService.delete((selectedStudent.getXh()));
                                 // 移除rooms中的数据，并刷新adapter
                                 students.remove(position);
                                 studentAdapter.notifyDataSetChanged();
@@ -98,7 +98,7 @@ public class Look2Activity extends AppCompatActivity {
     private void initData() {
         // 从SQLite数据库获取宿舍列表
         studentService = new StudentServiceImpl(this);
-//        students = roomService.getAllRooms();
+        students = studentService.getAllStudents();
 
         // 若数据库中没数据，则初始化数据列表，防止ListView报错
         if(students == null) {

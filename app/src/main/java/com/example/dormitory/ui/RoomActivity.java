@@ -71,8 +71,8 @@ public class RoomActivity extends AppCompatActivity implements View.OnClickListe
             if(room != null) {
                 etRoomName.setText(String.valueOf(room.getSushe()));
                 etRoomName.setEnabled(false);
-                etRealNumber.setText(String.valueOf(room.getYzpeople()));
-                etExpectNumber.setText(String.valueOf(room.getSzpeople()));
+                etRealNumber.setText(String.valueOf(room.getSzpeople()));
+                etExpectNumber.setText(String.valueOf(room.getYzpeople()));
                 etCost.setText(String.valueOf(room.getCost()));
                 etRemark.setText(room.getRemark());
                 spRoomSex.setSelection(sexes.indexOf(room.getSex()), true);
@@ -95,8 +95,8 @@ public class RoomActivity extends AppCompatActivity implements View.OnClickListe
             room = new Room();
         }
         room.setSushe(Integer.valueOf(etRoomName.getText().toString()));
-        room.setYzpeople(Integer.valueOf(etRealNumber.getText().toString()));
-        room.setSzpeople(Integer.parseInt(etExpectNumber.getText().toString()));
+        room.setYzpeople(Integer.valueOf(etExpectNumber.getText().toString()));
+        room.setSzpeople(Integer.parseInt(etRealNumber.getText().toString()));
         room.setSex((String) spRoomSex.getSelectedItem());
         room.setCost(Integer.parseInt(etCost.getText().toString()));
         room.setRemark(etRemark.getText().toString());

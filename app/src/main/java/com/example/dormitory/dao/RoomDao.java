@@ -17,7 +17,5 @@ public interface RoomDao {
     // 增删改一个宿舍
     void insert(Room room);
     void update(Room room);
-    void delete(String roomName);
-
     void delete(int roomName);
 }

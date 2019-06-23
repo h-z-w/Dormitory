@@ -19,5 +19,5 @@ public interface SorceDao {
     void insert(Login login);
 
     void update(Sorce sorce);
-    void delete(String sushe);
+    void delete(int sushe);
 }

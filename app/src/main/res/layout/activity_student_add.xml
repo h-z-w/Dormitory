@@ -87,14 +87,12 @@
                 android:text="性别："
                 android:textSize="30dp"/>
 
-            <Spinner
+            <EditText
                 android:id="@+id/sex"
                 android:layout_width="225dp"
-                android:layout_height="36dp"
-                android:ems="16"
-                android:hint="性别"
-                android:prompt="@string/sex_prompt"
-                android:spinnerMode="dialog"/>
+                android:layout_height="wrap_content"
+                android:hint="男"
+                android:textSize="20dp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"

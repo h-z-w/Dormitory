@@ -86,6 +86,11 @@ public class MarkFragment extends Fragment  {
                     intent.putExtra("title","查看宿舍得分");
                     startActivity(intent);
                 }
+                if("退出系统".equals(data)){
+                    Intent intent=new Intent(getActivity(),LoginActivity.class);
+                    intent.putExtra("title","退出系统");
+                    startActivity(intent);
+                }
 
             }
         });
@@ -107,6 +112,7 @@ public class MarkFragment extends Fragment  {
     private void initData() {
         datas = new ArrayList<>();
         datas.add("查看宿舍得分");
+        datas.add("退出系统");
 
 
 

@@ -41,7 +41,7 @@ public class ModifyActivity extends AppCompatActivity {
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
                 if (newPasswordInfo.equals(reNewPasswordInfo)) {
 
-                    Cursor cursor = db.rawQuery("select password from denglu where username=? ", new String[]{oldPasswordInfo});
+                    Cursor cursor = db.rawQuery("select username from denglu where password=? ", new String[]{oldPasswordInfo});
                     //判断用户是否存在，
                     if (cursor.moveToNext()) {
                         db.execSQL("update denglu set password=?  ", new String[]{newPasswordInfo});
@@ -49,7 +49,7 @@ public class ModifyActivity extends AppCompatActivity {
                         Intent intent = new Intent(ModifyActivity.this, LoginActivity.class);
                         startActivity(intent);
                     } else {
-                        Toast.makeText(ModifyActivity.this, "对不起，用户不存在", Toast.LENGTH_LONG).show();
+                        Toast.makeText(ModifyActivity.this, "原密码错误", Toast.LENGTH_LONG).show();
 
                     }
 

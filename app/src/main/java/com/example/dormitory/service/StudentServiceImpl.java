@@ -27,8 +27,8 @@ public class StudentServiceImpl implements StudentService{
     }
 
     @Override
-    public void delete(int shushe) {
-        studentDao.delete(String.valueOf(shushe));
+    public void delete(int xh) {
+        studentDao.delete(Integer.parseInt(String.valueOf(xh)));
     }
 
     public void modify(Student student) {

@@ -26,8 +26,8 @@ public class RoomDaoImpl implements RoomDao {
         String sql = "insert into room values(null,?,?,?,?,?)";
         db.execSQL(sql, new Object[]{
                 room.getSushe(),
-                room.getSzpeople(),
                 room.getYzpeople(),
+                room.getSzpeople(),
                 room.getCost(),
                 room.getRemark()});
         db.close();
@@ -38,24 +38,22 @@ public class RoomDaoImpl implements RoomDao {
         // 1. 获取db对象
         db = dbHelper.getWritableDatabase();
         // 2. 执行sql
-        String sql = "update room set szpeople=? where sushe=?";
+        String sql = "update room set yzpeople=?,szpeople=?,cost=? where sushe=?";
         db.execSQL(sql, new Object[]{
+                room.getYzpeople(),
                 room.getSzpeople(),
+                room.getCost(),
                 room.getSushe()
         });
     }
 
     @Override
-    public void delete(String roomName) {
+    public void delete(int roomName) {
         // 1. 获取db对象
         db = dbHelper.getWritableDatabase();
         // 2. 执行sql
-        String sql = "delete from room where shushe=?";
+        String sql = "delete from room where sushe=?";
         db.execSQL(sql, new Object[]{ roomName });
-    }
-
-    @Override
-    public void delete(int roomName) {
 
     }
 

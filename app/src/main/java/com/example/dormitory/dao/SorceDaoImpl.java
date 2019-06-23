@@ -69,14 +69,14 @@ public class SorceDaoImpl implements SorceDao{
     @Override
     public void update(Sorce sorce) {
         db = helper.getWritableDatabase();
-        String sql = "update  sorce set sushe=? where marks=?";
+        String sql = "update  sorce set marks=? where sushe=?";
         db.execSQL(sql,new Object[]{
-                sorce.getSushe(),
-                sorce.getMarks()});
+                sorce.getMarks(),
+                sorce.getSushe()});
     }
 
     @Override
-    public void delete(String sushe) {
+    public void delete(int sushe) {
         db = helper.getWritableDatabase();
         String sql = "delete from sorce where sushe=?";
         db.execSQL(sql,new Object[]{sushe});
