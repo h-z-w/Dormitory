@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bj"
     tools:context=".ui.Look2Activity">
 
     <TextView
@@ -24,49 +25,56 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="姓名"
-            android:textSize="20dp"
+            android:gravity="center"
+            android:textSize="15sp"
             tools:ignore="Suspicious0dp" />
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="班级"
-            android:textSize="20dp"
+            android:textSize="15sp"
             tools:ignore="Suspicious0dp" />
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="学号"
-            android:textSize="20dp"
+            android:textSize="15sp"
             tools:ignore="Suspicious0dp" />
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="性别"
-            android:textSize="20dp"
+            android:textSize="15sp"
             tools:ignore="Suspicious0dp" />
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="电话"
-            android:textSize="20dp"
+            android:textSize="15sp"
             tools:ignore="Suspicious0dp" />
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="宿舍"
-            android:textSize="20dp"
+            android:textSize="15sp"
             tools:ignore="Suspicious0dp" />
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="入学时间"
-            android:textSize="20dp"
+            android:textSize="12sp"
             tools:ignore="Suspicious0dp" />
     </LinearLayout>
     <ListView

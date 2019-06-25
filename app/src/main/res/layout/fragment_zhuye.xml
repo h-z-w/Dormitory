@@ -13,11 +13,15 @@
    <TextView
        android:layout_width="match_parent"
        android:layout_height="50dp"
-       android:background="#00DFFF"
+       android:background="#F0FFF0"
        android:text="欢迎进入管理员界面"
-       android:gravity="right"
+       android:gravity="left"
        android:textSize="30dp"
-       android:textColor="#FF9800"/>
+       android:textColor="#00DFFF"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="以下是今天的优秀宿舍图景："/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,19 +30,20 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
-        tools:ignore="Suspicious0dp">
+        tools:ignore="Suspicious0dp"
+        android:orientation="vertical">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="306宿舍"
+    android:gravity="center"
+    android:textColor="#ff0000"/>
+
 
         <ImageView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/lou1"
-            tools:ignore="Suspicious0dp" />
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:src="@drawable/lou1"
             tools:ignore="Suspicious0dp" />
     </LinearLayout>
@@ -46,38 +51,24 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
-        tools:ignore="Suspicious0dp">
-        <ImageView
-            android:layout_width="0dp"
+        tools:ignore="Suspicious0dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/lou1"
-            tools:ignore="Suspicious0dp" />
+            android:text="305宿舍"
+            android:gravity="center"
+            android:textColor="#ff0000"/>
+
+
         <ImageView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/lou1"
+
+            android:src="@drawable/lou2"
             tools:ignore="Suspicious0dp" />
     </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            tools:ignore="Suspicious0dp">
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/lou1"
-                tools:ignore="Suspicious0dp" />
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/lou1"
-                tools:ignore="Suspicious0dp" />
-        </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>
 

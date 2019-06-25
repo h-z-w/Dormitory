@@ -11,7 +11,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="姓名"
-        android:textSize="14sp" />
+        android:textSize="10sp" />
     <TextView
         android:id="@+id/student_class"
         android:layout_width="0dp"
@@ -19,7 +19,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="班级"
-        android:textSize="14sp" />
+        android:textSize="10sp" />
 
     <TextView
         android:id="@+id/student_xh"
@@ -63,7 +63,7 @@
         android:id="@+id/student_time"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:gravity="center"
         android:text="入学时间"
         android:layout_gravity="center"
