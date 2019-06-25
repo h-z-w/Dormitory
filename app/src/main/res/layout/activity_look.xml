@@ -70,7 +70,7 @@
             tools:ignore="Suspicious0dp" />
     </LinearLayout>
     <ListView
-        android:id="@+id/total_list_view"
+        android:id="@+id/total_list_view1"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

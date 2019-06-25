@@ -74,9 +74,11 @@ public class StudentDaoImpl implements StudentDao{
     @Override
     public void update(Student student) {
         db = helper.getWritableDatabase();
-        String sql = "update  student set sushe=? where name=?";
+        String sql = "update  student set sushe=?,tel=?,submission_date=? where name=?";
         db.execSQL(sql,new Object[]{
                 student.getShuShe(),
+                student.getTel(),
+                student.getSubmissionDate(),
                 student.getName()});
     }
 

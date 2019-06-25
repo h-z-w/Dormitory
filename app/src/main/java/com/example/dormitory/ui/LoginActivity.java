@@ -157,57 +157,20 @@ public class LoginActivity extends Activity {
             @Override
 
             public void onClick(View v) {
-
-
-
-                String nameInfo = etUsername.getText().toString();
-
-                String passwordInfo = etPassword.getText().toString();
-
-                //从数据库中获取密码并判断是否相同
-
-                SQLiteDatabase db = dbHelper.getWritableDatabase();
-
-                Cursor cursor = db.rawQuery("select password from denglu where username=?", new String[]{nameInfo});
-
-                String pi = null;
-
-                if (cursor.moveToNext()) {
-
-                    pi = cursor.getString(cursor.getColumnIndex("password"));//获取密码
-
-
-
-                    //密码正确跳转到登录后的界面
-
-                    if (passwordInfo.equals(pi)) {
-
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-
-                        startActivity(intent);
-
-                        cursor.close();
-
-                    } else {
-
-                        Toast.makeText(LoginActivity.this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
-
-                    } }else {
-
-                    Toast.makeText(LoginActivity.this, "账号密码不能为空", Toast.LENGTH_SHORT).show();
-
-
-
-
-
+                switch (v.getId()) {
+                    case R.id.btn_guanli:
+                        String username = etUsername.getText().toString().trim();
+                        String password = etPassword.getText().toString();
+                        //3.2比较用户名和密码是否正确，然后给出提示
+                        if (username.equals("admin") && password.equals("1111")) {
+                            Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(LoginActivity.this, "用户名或密码不对", Toast.LENGTH_LONG).show();
+                        }
                 }
-
-
-
-
-
             }
-
         });
 
 
@@ -267,7 +230,7 @@ public class LoginActivity extends Activity {
 
                         String codeInfo = code.getText().toString();
 
-                        //注册码要为10086
+                        //推荐码要为10086
 
                         if (codeInfo.equals("10086")) {
 
@@ -311,7 +274,7 @@ public class LoginActivity extends Activity {
 
                         else {
 
-                            Toast.makeText(LoginActivity.this, "注册码错误", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "推荐码错误", Toast.LENGTH_SHORT).show();
 
                         }
 

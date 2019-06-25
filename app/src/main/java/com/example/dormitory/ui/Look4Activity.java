@@ -1,5 +1,6 @@
 package com.example.dormitory.ui;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -26,7 +27,7 @@ import java.util.List;
 public class Look4Activity extends AppCompatActivity {
     private static final int ADD_REQUEST = 100;
     private static final int MODIFY_REQUEST = 101;
-
+    private ActionBar supporActionBar;
     private ListView sorceList;
     private SorceAdapter sorceAdapter;
 
@@ -39,7 +40,8 @@ public class Look4Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_look4);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);   //给左上角添加返回箭头
+        getSupportActionBar().setTitle("宿舍得分");  //设置Title文字
         // 从SQLite数据库获取数据
         initData();
 
@@ -124,7 +126,11 @@ public class Look4Activity extends AppCompatActivity {
             // 刷新ListView
             sorceAdapter.notifyDataSetChanged();
         }
-    }
+
+        }
+
+
+
 
     // 创建添加功能的选项菜单
     @Override
@@ -148,5 +154,14 @@ public class Look4Activity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    // 返回上一界面
+    @Override
+    public boolean onSupportNavigateUp()
+    {
+        finish();
+        return super.onSupportNavigateUp();
     }
 }

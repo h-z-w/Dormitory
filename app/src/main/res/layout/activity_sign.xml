@@ -13,7 +13,7 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/input_box"
         android:gravity="center"
-        android:hint="请填写注册码" />
+        android:hint="请填写推荐码" />
 
     <EditText
         android:id="@+id/admin_register_name"
@@ -38,7 +38,7 @@
         android:gravity="center"
         android:hint="请输入密码"
         android:inputType="textPassword"
- />
+        />
 
     <EditText
         android:id="@+id/admin_register_second_password"

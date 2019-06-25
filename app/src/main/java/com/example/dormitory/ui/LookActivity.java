@@ -38,7 +38,8 @@ public class LookActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_look);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);   //给左上角添加返回箭头
+        getSupportActionBar().setTitle("学生信息");  //设置Title文字
         // 从SQLite数据库获取数据
         initData();
 
@@ -124,5 +125,10 @@ public class LookActivity extends AppCompatActivity {
         }
 
     }
-
+    @Override
+    public boolean onSupportNavigateUp()
+    {
+        finish();
+        return super.onSupportNavigateUp();
+    }
 }
